@@ -1,1 +1,1 @@
-This is the git to my flappy bird game in python. Use space to jump and r to restart. Be careful not to bump in a pillar. Have fun!
+This is the git to my flappy bird game in python. Use space to jump and r to restart. Be careful not to bump in a pillar. To play go to the itch.io link or just access it from here. https://matek50939.itch.io/flappy-bird Have fun!
