@@ -1,23 +1,20 @@
-# flappy.py
 import pygame
 import sys
 import random
 
-# --- Config ---
 WIDTH, HEIGHT = 400, 600
 FPS = 60
 
 BIRD_X = 80
 BIRD_SIZE = 30
 GRAVITY = 0.4
-FLAP_STRENGTH = -7.0      # smaller jumps
+FLAP_STRENGTH = -7.0      
 PIPE_WIDTH = 80
-PIPE_GAP = 200            # bigger pipe gap
+PIPE_GAP = 200          
 PIPE_DIST = 200
 GROUND_HEIGHT = 80
 BG_COLOR = (135, 206, 235)
 
-# --- Initialize pygame ---
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Flappy Bird (pygame)")
@@ -57,15 +54,13 @@ class Bird:
     def draw(self, surf):
         pygame.draw.ellipse(surf, (255, 255, 0), self.rect)
 
-        # --- FIXED: beak pointing outward ---
         beak = [
-            (self.x + self.size, self.y + self.size // 2 - 6),  # top base near head
-            (self.x + self.size, self.y + self.size // 2 + 6),  # bottom base near head
-            (self.x + self.size + 14, self.y + self.size // 2),  # tip pointing outward
+            (self.x + self.size, self.y + self.size // 2 - 6),
+            (self.x + self.size, self.y + self.size // 2 + 6),
+            (self.x + self.size + 14, self.y + self.size // 2),
         ]
         pygame.draw.polygon(surf, (255, 140, 0), beak)
 
-        # eye
         eye_pos = (int(self.x + self.size * 0.65), int(self.y + self.size * 0.33))
         pygame.draw.circle(surf, (0, 0, 0), eye_pos, 3)
 
